@@ -1,0 +1,16 @@
+<h1>Perosnales</h1>
+<hr>
+<div class="row">
+
+  <div class="col">    
+    <dbz-list 
+    [caracterList]="caracters"
+    (indexDelete)="onDeleteCaracter($event)"
+    >
+  </dbz-list>
+  </div>
+
+  <div class="col">      
+    <dbz-add-character (onNewCarter)="onNewCaracter($event)"></dbz-add-character> 
+  </div>
+</div>
