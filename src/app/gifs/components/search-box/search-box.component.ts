@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { GifService } from '../../services/gif.service';
 
 @Component({
   selector: 'gifs-search-box',
@@ -19,9 +20,16 @@ export class SearchBoxComponent {
   mielemento!:ElementRef<HTMLInputElement>
 
 
+  constructor(private gifService:GifService){
+
+  }
+
   searchTag(){
     const valTag= this.mielemento.nativeElement.value;//Aqui extraemosel valor del input que esta dentro del componente html
+    this.gifService.searchTag(valTag);
     console.log(valTag);
+    this.mielemento.nativeElement.value="";
+
   }
 
 }
